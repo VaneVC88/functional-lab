@@ -1,0 +1,22 @@
+{
+  "name": "01-state",
+  "version": "1.0.0",
+  "description": "Primeros ejercicios de programacion funcional",
+  "main": "lowercaser.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "functional",
+    "funcional",
+    "programming"
+  ],
+  "author": "Vanessa Valdebenito",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^21.1.0"
+  }
+}
