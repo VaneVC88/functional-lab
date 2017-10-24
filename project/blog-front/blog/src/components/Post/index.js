@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import classnames from 'classnames'
 import { Parser } from 'html-to-react'
 
+import {getPost} from '../../blog-api'
+
 const htmlToReactParser = new Parser()
 
 export default class Post extends Component {
@@ -16,6 +18,19 @@ export default class Post extends Component {
   componentWillMount() {
     const { match } = this.props
     this.setState({ loading: 1 })
+    getPost(match.params.id)
+    .then(resp => {
+      this.setState({
+        post: resp,
+        loading: 0,
+      })
+    })
+    .catch(err => {
+      this.setState({
+        error: err,
+        loading: 0,
+      })
+    })
     // TÚ CÓDIGO VA AQUÍ
   }
 
